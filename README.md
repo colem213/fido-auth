@@ -10,3 +10,6 @@
 1. `docker-compose up -d`
 1. Navigate to http://localhost:30303/auth/admin/master/console/#/
 1. Log in with admin:admin
+
+## Exporting Realms
+`docker-compose run auth "-Dkeycloak.migration.action=export -Dkeycloak.migration.provider=dir -Dkeycloak.migration.usersExportStrategy=REALM_FILE"`
