@@ -1,4 +1,4 @@
-version: '2'
+version: '2.1'
 services:
   database:
     image: postgres:9.6.0
@@ -12,7 +12,8 @@ services:
     ports:
       - "30303:8080"
     volumes:
-      - ./init/keycloak:/tmp/keycloak-export
+      - "${PWD-.}/init/keycloak:/tmp/keycloak-export"
+      - "${PWD-.}/themes/address:/opt/jboss/keycloak/themes/address"
     environment:
       - POSTGRES_PORT_5432_TCP_ADDR=database
     links:
